@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abot.Plugins.Awesomium", "Abot.Plugins.Awesomium\Abot.Plugins.Awesomium.csproj", "{9727E791-59F9-40B5-B552-73EA0D1E5EA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abot.Plugins.Awesomium.ExternalProcess", "Abot.Plugins.Awesomium.ExternalProcess\Abot.Plugins.Awesomium.ExternalProcess.csproj", "{627D8228-5F49-45F1-B2FF-B58ACB8DB74B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abot.Plugins.Awesomium.Test", "Abot.Plugins.Awesomium.Test\Abot.Plugins.Awesomium.Test.csproj", "{79D6C522-C035-4B09-8E91-B863F952735F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9727E791-59F9-40B5-B552-73EA0D1E5EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9727E791-59F9-40B5-B552-73EA0D1E5EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9727E791-59F9-40B5-B552-73EA0D1E5EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9727E791-59F9-40B5-B552-73EA0D1E5EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627D8228-5F49-45F1-B2FF-B58ACB8DB74B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{627D8228-5F49-45F1-B2FF-B58ACB8DB74B}.Debug|Any CPU.Build.0 = Debug|x86
+		{627D8228-5F49-45F1-B2FF-B58ACB8DB74B}.Release|Any CPU.ActiveCfg = Release|x86
+		{627D8228-5F49-45F1-B2FF-B58ACB8DB74B}.Release|Any CPU.Build.0 = Release|x86
+		{79D6C522-C035-4B09-8E91-B863F952735F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D6C522-C035-4B09-8E91-B863F952735F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D6C522-C035-4B09-8E91-B863F952735F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D6C522-C035-4B09-8E91-B863F952735F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
