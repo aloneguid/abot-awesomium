@@ -86,6 +86,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abot.Plugins.Awesomium.ExternalProcess\Abot.Plugins.Awesomium.ExternalProcess.csproj">
+      <Project>{627d8228-5f49-45f1-b2ff-b58acb8db74b}</Project>
+      <Name>Abot.Plugins.Awesomium.ExternalProcess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

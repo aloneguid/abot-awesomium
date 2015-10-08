@@ -79,6 +79,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Abot.Plugins.Awesomium.ExternalProcess\Abot.Plugins.Awesomium.ExternalProcess.csproj">
+      <Project>{627d8228-5f49-45f1-b2ff-b58acb8db74b}</Project>
+      <Name>Abot.Plugins.Awesomium.ExternalProcess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Abot.Plugins.Awesomium\Abot.Plugins.Awesomium.csproj">
       <Project>{9727e791-59f9-40b5-b552-73ea0d1e5ea4}</Project>
       <Name>Abot.Plugins.Awesomium</Name>

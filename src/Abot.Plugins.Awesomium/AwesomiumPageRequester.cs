@@ -64,6 +64,8 @@ namespace Aloneguid.Classificator.Crawler.Abot
          {
             string path = Path.Combine(_processDir.FullName, ExternalExeName);
             _extProcess = Process.Start(path);
+            //can become null if the exe file doesn't exist in the target directory
+            if(_extProcess == null) throw new InvalidOperationException("could not launch " + ExternalProcessName + ", please check that all the files are present");
             RunningProcessIdToProcess[_extProcess.Id] = _extProcess;
          }
 
