@@ -6,7 +6,7 @@ using Abot.Core;
 using Abot.Plugins.Awesomium.Remote;
 using Abot.Poco;
 
-namespace Aloneguid.Classificator.Crawler.Abot
+namespace Abot.Plugins.Awesomium
 {
    public class AwesomiumPageRequester : IPageRequester
    {
@@ -45,8 +45,8 @@ namespace Aloneguid.Classificator.Crawler.Abot
 
          try
          {
-            string html = _downloader.DownloadPage(uri.ToString());
-            result.Content = new PageContent {Text = html};
+            DownloadedPage page = _downloader.DownloadPage(uri.ToString());
+            result.Content = new PageContent {Text = page.Html};
          }
          finally
          {

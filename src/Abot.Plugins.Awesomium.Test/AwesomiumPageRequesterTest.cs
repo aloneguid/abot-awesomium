@@ -3,7 +3,6 @@ using System.IO;
 using System.Reflection;
 using Abot.Core;
 using Abot.Poco;
-using Aloneguid.Classificator.Crawler.Abot;
 using NUnit.Framework;
 
 namespace Abot.Plugins.Awesomium.Test

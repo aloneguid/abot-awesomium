@@ -16,10 +16,13 @@ namespace Abot.Plugins.Awesomium.ExternalProcess.Presenters
       {
          public static WebHostTabPresenter ParentInstance { get; set; }
 
-         public string DownloadPage(string url)
+         public DownloadedPage DownloadPage(string url)
          {
             string html = ParentInstance.DownloadHtml(url);
-            return html;
+            return new DownloadedPage
+            {
+               Html = html
+            };
          }
       }
 

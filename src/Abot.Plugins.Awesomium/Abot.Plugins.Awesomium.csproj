@@ -69,6 +69,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -80,6 +81,7 @@
   <ItemGroup>
     <Compile Include="AwesomiumPageRequester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remote\DownloadedPage.cs" />
     <Compile Include="Remote\IRemotePageDownloader.cs" />
     <Compile Include="Remote\PageDownloaderIpcServer.cs" />
   </ItemGroup>

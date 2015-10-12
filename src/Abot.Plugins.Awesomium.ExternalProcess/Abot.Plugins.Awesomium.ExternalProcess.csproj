@@ -59,6 +59,7 @@
     <Reference Include="Awesomium.Windows.Forms, Version=1.7.5.1, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -71,6 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Abot.Plugins.Awesomium\Remote\DownloadedPage.cs">
+      <Link>Remote\DownloadedPage.cs</Link>
+    </Compile>
     <Compile Include="..\Abot.Plugins.Awesomium\Remote\IRemotePageDownloader.cs">
       <Link>Remote\IRemotePageDownloader.cs</Link>
     </Compile>

@@ -6,6 +6,6 @@ namespace Abot.Plugins.Awesomium.Remote
    public interface IRemotePageDownloader
    {
       [OperationContract]
-      string DownloadPage(string url);
+      DownloadedPage DownloadPage(string url);
    }
 }
