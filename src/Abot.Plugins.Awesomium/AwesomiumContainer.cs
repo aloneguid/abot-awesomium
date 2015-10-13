@@ -34,7 +34,9 @@ namespace Abot.Plugins.Awesomium
             try
             {
                Process p = Process.GetProcessById(_processId);
-               p.Kill();
+               p.CloseMainWindow();
+               p.WaitForExit();
+               //p.Kill();
                _processId = -1;
             }
             catch (ArgumentException)

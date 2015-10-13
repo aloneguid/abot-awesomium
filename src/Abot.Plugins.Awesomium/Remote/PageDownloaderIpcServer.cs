@@ -16,8 +16,8 @@ namespace Abot.Plugins.Awesomium.Remote
          //we launch it on a random thread.
          var thread = new Thread(() =>
          {
-            _host = new ServiceHost(typeof(TServerImpl), new Uri("net.pipe://localhost"));
-            _host.AddServiceEndpoint(typeof(IRemotePageDownloader), CreateBinding(), "Awesomium-" + channelId);
+            _host = new ServiceHost(typeof(TServerImpl), new Uri("net.pipe://localhost/" + channelId));
+            _host.AddServiceEndpoint(typeof(IRemotePageDownloader), CreateBinding(), "Awesomium");
             _host.Open();
 
          });
@@ -27,7 +27,7 @@ namespace Abot.Plugins.Awesomium.Remote
       public static IRemotePageDownloader CreateClient(string channelId)
       {
          var pipeFactory = new ChannelFactory<IRemotePageDownloader>(CreateBinding(),
-            new EndpointAddress("net.pipe://localhost/Awesomium-" + channelId));
+            new EndpointAddress("net.pipe://localhost/" + channelId + "/Awesomium"));
 
          return pipeFactory.CreateChannel();
       }
