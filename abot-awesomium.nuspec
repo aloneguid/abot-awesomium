@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+   <metadata>
+      <id>Abot.Plugins.Awesomium</id>
+      <version>1.0.0</version>
+      <authors>Ivan Gavryliuk</authors>
+      <owners>Ivan Gavryliuk</owners>
+      <projectUrl>https://github.com/aloneguid/abot-awesomium</projectUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <description>
+         This is a plugin into Abot crawling framework which integrates Awesomium engine. 
+      </description>
+      <summary>
+         This package does not require Awesomium to be installed locally due to including all it's binaries inside
+         the actual package. This increases package size, however allows us to control the referenced
+         version better than just using a third-party package or requiring a separate local install.
+      </summary>
+      <releaseNotes>
+         The first release, may contain bugs which you are welcome to report
+      </releaseNotes>
+      <copyright>Copyright (c) 2015 by Ivan Gavryliuk</copyright>
+      <tags>Awesomium, Abot</tags>
+   </metadata>
+   <files>
+      <!-- primary .NET plugin assemblies-->
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\Abot.Plugins.*" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\procsomium.exe" target="lib\net45"/>
+
+      <!-- Awesomium embedded stuff -->
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\Awesomium.*" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\avcodec-53.dll" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\avformat-53.dll" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\avutil-51.dll" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\awesomium_process*" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\icudt.dll" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\inspector.pak" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\libEGL.dll" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\libGLESv2.dll" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\pdf_js.pak" target="lib\net45"/>
+      <file src="src\Abot.Plugins.Awesomium\bin\Release\xinput9_1_0.dll" target="lib\net45"/>
+   </files>
+</package>
