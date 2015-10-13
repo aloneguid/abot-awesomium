@@ -13,6 +13,8 @@ namespace Abot.Plugins.Awesomium
    {
       private readonly DirectoryInfo _processDir;
       private readonly ObjectPool<AwesomiumContainer> _awesomiumWorkerPool;
+      private static readonly string ChannelPrefix = Guid.NewGuid().ToString();
+      private static int _channelCounter = 0;
 
       static AwesomiumPageRequester()
       {
@@ -27,7 +29,7 @@ namespace Abot.Plugins.Awesomium
       {
          _processDir = processDir;
          _awesomiumWorkerPool = new ObjectPool<AwesomiumContainer>(
-            () => new AwesomiumContainer(_processDir.FullName),
+            () => new AwesomiumContainer(_processDir.FullName, $"{ChannelPrefix}-{_channelCounter++}"),
             (c) => c.Dispose(),
             10,
             TimeSpan.FromHours(1));
@@ -41,14 +43,16 @@ namespace Abot.Plugins.Awesomium
             DownloadContentStarted = DateTime.UtcNow
          };
 
+         AwesomiumContainer container = null;
          try
          {
-            AwesomiumContainer container = _awesomiumWorkerPool.GetInstance();
+            container = _awesomiumWorkerPool.GetInstance();
             DownloadedPage page = container.Download(uri.ToString());
             result.Content = new PageContent {Text = page.Html};
          }
          finally
          {
+            _awesomiumWorkerPool.ReleaseInstance(container);
             result.RequestCompleted = DateTime.UtcNow;
             result.DownloadContentCompleted = DateTime.UtcNow;
          }

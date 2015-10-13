@@ -96,6 +96,7 @@
     <Compile Include="Forms\WebHostTab.Designer.cs">
       <DependentUpon>WebHostTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globals.cs" />
     <Compile Include="Presenters\WebHostFormPresenter.cs" />
     <Compile Include="Presenters\WebHostTabPresenter.cs" />
     <Compile Include="Program.cs" />

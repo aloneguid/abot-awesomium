@@ -7,14 +7,16 @@ namespace Abot.Plugins.Awesomium
 {
    class AwesomiumContainer : IDisposable
    {
+      private readonly string _channelId;
       private const string ExternalExeName = "procsomium.exe";
       private const string ExternalProcessName = "procsomium";
       private readonly string _processPath;
       private int _processId = -1;
       private IRemotePageDownloader _remote;
 
-      public AwesomiumContainer(string processDir)
+      public AwesomiumContainer(string processDir, string channelId)
       {
+         _channelId = channelId;
          if (processDir == null) throw new ArgumentNullException(nameof(processDir));
 
          _processPath = Path.Combine(processDir, ExternalExeName);
@@ -52,12 +54,12 @@ namespace Abot.Plugins.Awesomium
          {
             if (_processId == -1)
             {
-               _processId = Process.Start(_processPath).Id;
+               _processId = Process.Start(_processPath, _channelId).Id;
             }
 
             if (_remote == null)
             {
-               _remote = PageDownloaderIpcServer<IRemotePageDownloader>.CreateClient();
+               _remote = PageDownloaderIpcServer<IRemotePageDownloader>.CreateClient(_channelId);
             }
 
             return _remote;

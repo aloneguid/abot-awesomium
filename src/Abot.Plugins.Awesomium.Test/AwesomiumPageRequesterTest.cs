@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 using Abot.Core;
 using Abot.Poco;
 using NUnit.Framework;
@@ -41,6 +42,23 @@ namespace Abot.Plugins.Awesomium.Test
          _requester.MakeRequest(new Uri("http://autotrader.co.uk"));
       }
 
+      [Test]
+      public void DownloadPage_InThreads_DownloadsAll()
+      {
+         Task<CrawledPage>[] tasks = new[]
+         {
+            NewThreadDownload(new Uri("http://bbc.co.uk")),
+            NewThreadDownload(new Uri("http://lookers.co.uk")),
+            NewThreadDownload(new Uri("http://autotrader.co.uk"))
+         };
+
+         Task.WaitAll(tasks);
+      }
+
+      private Task<CrawledPage> NewThreadDownload(Uri url)
+      {
+         return Task.Factory.StartNew(() => _requester.MakeRequest(url), TaskCreationOptions.LongRunning);
+      }
 
       protected DirectoryInfo BuildDir
       {

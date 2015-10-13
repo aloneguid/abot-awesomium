@@ -30,7 +30,7 @@ namespace Abot.Plugins.Awesomium.ExternalProcess.Presenters
       {
          _view = view;
          ServerDelegate.ParentInstance = this;
-         _server = new PageDownloaderIpcServer<ServerDelegate>();
+         _server = new PageDownloaderIpcServer<ServerDelegate>(Globals.ChannelId);
       }
 
       public string DownloadHtml(string address)
