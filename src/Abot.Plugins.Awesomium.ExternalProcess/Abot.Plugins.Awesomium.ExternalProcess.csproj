@@ -84,7 +84,6 @@
     <Compile Include="..\Abot.Plugins.Awesomium\Remote\PageDownloaderIpcServer.cs">
       <Link>Remote\PageDownloaderIpcServer.cs</Link>
     </Compile>
-    <Compile Include="App\RemotePageDownloader.cs" />
     <Compile Include="Forms\WebHostForm.cs">
       <SubType>Form</SubType>
     </Compile>
