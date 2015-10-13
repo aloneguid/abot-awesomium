@@ -13,13 +13,13 @@ namespace Abot.Plugins.Awesomium.Test
       private DirectoryInfo _buildDir;
       private IPageRequester _requester;
 
-      [SetUp]
+      [TestFixtureSetUp]
       public void SetUp()
       {
          _requester = new AwesomiumPageRequester(BuildDir);
       }
 
-      [TearDown]
+      [TestFixtureTearDown]
       public void TearDown()
       {
          _requester.Dispose();
